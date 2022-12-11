@@ -9,7 +9,97 @@
 </head>
 
 <body>
+   <script>
+      /*1) Напишите программу, которая спрашивает у пользователя его имя и выводит в консоли текстовое поздравление.
+      Используйте любой цикл для реализации.*/
 
+      let stranger = prompt('Enter your name');
+      while (stranger) {
+         console.log(`Happy birthday to you\nHappy birthday to you\nHappy birthday, dear ${stranger}\nHappy birthday to you`)
+         break
+      }
+
+
+      /*2) Сформируйте строку '.#.#.#.#.#.#.#' с помощью цикла for, где количество повторений символов
+      '.#' задает пользователь через команду prompt().*/
+
+      let someNum = + prompt('Enter some number');
+      let str = ''; // присваиваю переменной пустое строчное значение, чтоб после итерации туда сохранялись данные.
+      for (let i = 1; i <= someNum; i++) { //let i = 1, чтоб отсчет начинался не с 0.
+         str += '.#'; // str = str + '.#'
+      }
+      console.log(str);
+
+
+      /*3) Напишите программу, котрая спрашивает у пользователя число и суммирует все нечетные числа, до этого числа.
+      Если пользователь не ввел число, вызвать команду prompt() c текстом "Invalid. You should enter a number" 
+      и попросить его заново ввести число. Результат отобразите в консоли.*/
+
+      let num = +prompt('Enter some number');
+      let sum = 0;  //всегда присваиваю значение 0 переменной для дальнейшего хранения сумм
+      if (num === num) {
+         for (let i = 0; i <= num; i++) {
+            if (i % 2 !== 0) {  //выбираю нечетное число
+               sum += i // sum = sum + i
+            }
+         }
+      } else {
+         +prompt('Invalid. You should enter a number');
+      }
+      console.log(sum); // вне цикла для получения результата (если консолю в цикле- получаю ступенчатые расчеты)
+
+
+      /*4) Напишите бесконечный цикл, который прерывается при помощи команды break, когда Math.random() > 0.7.
+      Выведите в консоль число, которое прерывает цикл и отобразите количество итераций цикла.*/
+
+      let rand = 0;
+      let iterationNum = 0;
+
+      while (true) {
+         rand = Math.random();
+         iterationNum++;
+         if (rand > 0.7) {
+            console.log(`Loop was finished because of: ${rand}`);
+            break;
+         }
+      }
+      console.log(`Number of iterations: ${iterationNum}`);
+
+
+      /*5) Напишите цикл от 1 до 50, в котором будет выводится поочередно числа от 1 до 50, при этом:
+      Если число делится на 3 без остатка, то выводить не это число, а слово 'Div by 3';
+      Если число делится на 5 без остатка, то выводить не это число, а слово 'Div by 5';
+      Если число делится и на 3 и на 5, то выводить не это число, а слово 'Div by 5 and 3'*/
+
+      for (let i = 1; i <= 50; i++) {
+         if (i % 3 && i % 5 == 0) {
+            console.log('Div by 5 and 3');
+         } else {
+            if (i % 3 == 0) {
+               console.log('Div by 3');
+            } else {
+               if (i % 5 == 0) {
+                  console.log('Div by 5');
+               } else {
+                  console.log(i);  //когда условия выше сработали, вывожу в консоль оставшиеся цифры
+               }
+            }
+         }
+      }
+
+
+      /*6) Выведите текущую дату и время, учитывая часовой пояс*/
+
+      let date = new Date();
+
+      date.getFullYear();
+      date.getHours();
+      date.getUTCDate();
+      date.toDateString();
+
+      console.log(date);
+
+   </script>
 </body>
 
 </html>
