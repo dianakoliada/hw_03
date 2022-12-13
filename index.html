@@ -14,13 +14,15 @@
       Используйте любой цикл для реализации.*/
 
       let stranger = prompt('Enter your name');
-      while (stranger) {
-         console.log('Happy birthday to you');
-         console.log('Happy birthday to you');
-         console.log(`Happy birthday, dear ${stranger}`);
-         console.log('Happy birthday to you');
-         break;
+      let someStr = '';
+      for (let i = 0; i <= 3; i++) {
+         if (i === 2) {
+            someStr = someStr + `Happy birthday, dear ${stranger}\n`;
+         } else {
+            someStr += 'Happy birthday to you\n';
+         }
       }
+      console.log(someStr);
 
 
       /*2) Сформируйте строку '.#.#.#.#.#.#.#' с помощью цикла for, где количество повторений символов
